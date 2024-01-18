@@ -6,9 +6,12 @@ from django.core.exceptions import ValidationError
 
 from common.models import BaseModelWithUID
 from core.models import User
+from .choices import ShopUserRole
 
 
 class Shop(BaseModelWithUID):
+    """Models for merchant shop"""
+
     merchant = models.ForeignKey(
         User, on_delete=models.CASCADE, db_index=True, related_name="shop_merchant"
     )
@@ -47,3 +50,32 @@ class Shop(BaseModelWithUID):
     class Meta:
         verbose_name = "Merchant Shop"
         verbose_name_plural = "Merchant Shops"
+
+
+class ShopUser(BaseModelWithUID):
+    """Models for merchant shop user"""
+
+    shop = models.ForeignKey(
+        Shop, related_name="merchant_shop_user", on_delete=models.CASCADE, db_index=True
+    )
+    shop_user = models.ForeignKey(
+        User, on_delete=models.CASCADE, db_index=True, related_name="shop_user"
+    )
+    user_role = models.CharField(
+        max_length=20,
+        choices=ShopUserRole.choices,
+        default=ShopUserRole.UNDEFINED,
+    )
+
+    def __str__(self):
+        return f"shop : {self.shop.name}, shop_user : {self.shop_user.username}, user_role : {self.user_role}"
+
+    class Meta:
+        verbose_name = "Merchant Shop User"
+        verbose_name_plural = "Merchant Shop Users "
+
+        constraints = [
+            models.UniqueConstraint(
+                fields=["shop_user", "user_role"], name="unique_shop_user_role"
+            )
+        ]

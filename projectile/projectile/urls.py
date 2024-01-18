@@ -15,6 +15,7 @@ urlpatterns = [
     path("api/v1/users/profile", include("user_profile.rest.urls.profile")),
     # shop url
     path("api/v1/shops", include("shop.rest.urls.shop")),
+    path("api/v1/shops/<str:domain>", include("shop.rest.urls.shop_user")),
     # silk url
     path("silk/", include("silk.urls", namespace="silk")),
     # Spectacular url

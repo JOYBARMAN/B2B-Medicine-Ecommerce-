@@ -8,11 +8,9 @@ from common.permission_messages import (
     non_merchant_shop,
     non_customer_or_merchant,
 )
-from core.permissions import IsAuthenticated
+from core.permissions import IsAuthenticated, SAFE_METHODS
 from core.choices import UserType
-
-
-SAFE_METHODS = ("GET", "HEAD", "OPTIONS")
+from shop.models import Shop
 
 
 class IsMerchantUser(IsAuthenticated):
@@ -71,3 +69,20 @@ class IsMerchantShopOrReadOnly(BasePermission):
 
         # Deny access if the user is not merchant of this shop
         return obj.merchant == request.user
+
+
+class IsOwnShopUser(IsAuthenticated):
+    """
+    Allow access only authenticate and merchant of this shop to manage users
+    """
+
+    message = non_merchant_shop
+
+    def has_permission(self, request, view):
+        # If not user autheticate
+        if not super().has_permission(request, view):
+            return False
+
+        domain = view.kwargs.get("domain")
+
+        return Shop.objects.filter(domain=domain, merchant=request.user).exists()
