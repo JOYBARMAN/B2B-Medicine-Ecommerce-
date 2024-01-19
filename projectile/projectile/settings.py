@@ -48,6 +48,7 @@ PROJECT_APPS = [
     "user_profile.apps.UserProfileConfig",
     "shop.apps.ShopConfig",
     "product.apps.ProductConfig",
+    "cart.apps.CartConfig",
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",

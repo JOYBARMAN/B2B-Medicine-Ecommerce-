@@ -19,6 +19,8 @@ urlpatterns = [
     path("api/v1/merchant", include("shop.rest.urls.merchant")),
     # shop product url
     path("api/v1/shops/<str:domain>/products", include("product.rest.urls.product")),
+    # customer cart url
+    path("api/v1/carts", include("cart.rest.urls.cart")),
     # silk url
     path("silk/", include("silk.urls", namespace="silk")),
     # Spectacular url
