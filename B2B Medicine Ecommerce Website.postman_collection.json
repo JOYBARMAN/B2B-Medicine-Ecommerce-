@@ -1,0 +1,1833 @@
+{
+	"info": {
+		"_postman_id": "0cd2f6db-ed25-4831-98ea-0a389a8b628a",
+		"name": "B2B Medicine Ecommerce Website",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "20619902"
+	},
+	"item": [
+		{
+			"name": "Authentication",
+			"item": [
+				{
+					"name": "token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"joy@gmail.com\",\n    \"password\":\"12345\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/token",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"token"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"joyOrko\",\n    \"phone\":\"+8801761565504\",\n    \"email\":\"barmanjoy88@gmail.com\",\n    \"user_type\":\"UNDEFINED\",\n    \"password\":\"12345678\",\n    \"confirm_password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/register",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"register"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "active-account-by-otp",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDY5NTM3LCJpYXQiOjE3MDU0Nzc1MzcsImp0aSI6IjVjZDdjYzQ4MDYxMDRlNGZiMTZjZjY0YTNiNWFhOTQzIiwidXNlcl9pZCI6MTB9.4pc7vHKyV8KFHVYtT7N_W9AStI9OhO0cfb2-J7eNjqA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"otp\":535786\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/active-account",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"active-account"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "change-password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDY5Nzg0LCJpYXQiOjE3MDU0Nzc3ODQsImp0aSI6ImQ4MGNjZGFmMzdjOTQ2ZTVhMjdkOTA5MDQxZjlmMjI0IiwidXNlcl9pZCI6MTB9.fP_58SDBnRbH0jHv8mqszIbCP2IgSzEhGBTfcdOGTiA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"old_password\":\"12345678\",\n    \"new_password\":\"123456789\",\n    \"confirm_password\":\"123456789\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/change-password",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password-reset-mail",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"email\":\"barmanjoy88@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/password-reset-mail",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset-mail"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "password-reset",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"new_password\":\"12345678\",\n    \"confirm_password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/auth/password-reset/22f0c01c-da9e-4fa9-b78c-b77ec13e5da6/c0y9fd-5647c3bde884c75fc27f61b0f65eb7b7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"auth",
+								"password-reset",
+								"22f0c01c-da9e-4fa9-b78c-b77ec13e5da6",
+								"c0y9fd-5647c3bde884c75fc27f61b0f65eb7b7"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Here is user authentication related api collection."
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "get-user-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-user-detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/c6b7e0be-5f38-4f8b-83f5-0eb716189fb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c6b7e0be-5f38-4f8b-83f5-0eb716189fb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-user",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"joyOrko1\",\n    \"phone\":\"+8801761565505\",\n    \"email\":\"barmanjoy188@gmail.com\",\n    \"user_type\":\"UNDEFINED\",\n    \"password\":\"12345678\",\n    \"confirm_password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-user-info",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"joy barman orko\",\n    \"email\":\"barmanjoy99@gmail.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/c6b7e0be-5f38-4f8b-83f5-0eb716189fb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c6b7e0be-5f38-4f8b-83f5-0eb716189fb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft-delete-user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"REMOVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/c6b7e0be-5f38-4f8b-83f5-0eb716189fb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c6b7e0be-5f38-4f8b-83f5-0eb716189fb1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "put-user-info",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\":\"joy barman orko\",\n    \"email\":\"barmanjoy99@gmail.com\",\n    \"password\":\"12345678\",\n    \"confirm_password\":\"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/c6b7e0be-5f38-4f8b-83f5-0eb716189fb1",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"c6b7e0be-5f38-4f8b-83f5-0eb716189fb1"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Here is the collection all user api . Only admin can access this endpoint"
+		},
+		{
+			"name": "Profile",
+			"item": [
+				{
+					"name": "get-user-profile",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-profile",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDcyMjkxLCJpYXQiOjE3MDU0ODAyOTEsImp0aSI6IjAxOGM2YTkwMTE5YzQ1NTU5Nzg2Y2NiNjc4YTRiNmE2IiwidXNlcl9pZCI6MX0.mU36YFoLrOn8dQWA1oeI8gzhOpb1aOhEQmWazQqmAE4",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"full_name\": \"joy barman orko\",\n    \"first_name\": \"Joy\",\n    \"last_name\": \"Barman\",\n    \"gender\": \"MALE\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/profile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"profile"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Here is user profile api ."
+		},
+		{
+			"name": "Shops",
+			"item": [
+				{
+					"name": "shop-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"shop1\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-patch",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"shop1\",\n    \"address\":\"Dhaka\",\n    \"email\":\"shop1@gmail.com\",\n    \"phone\":\"+8801761565504\",\n    \"established_date\": \"2022-01-01\",\n    \"domain\":\"shop.localhost:3000.com\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop.localhost:3000.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop.localhost:3000.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-put",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"shop2\",\n    \"address\":\"Dhaka\",\n    \"email\":\"shop2@gmail.com\",\n    \"phone\":\"+8801761565504\",\n    \"established_date\": \"2022-01-01\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-soft-delete",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"REMOVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "merchant-shop-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/merchant/shops",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"merchant",
+								"shops"
+							]
+						}
+					},
+					"response": []
+				}
+			],
+			"description": "Here is the collection of shop api"
+		},
+		{
+			"name": "Shop-Users",
+			"item": [
+				{
+					"name": "get-shop-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-detail-shop-user",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users/a609d76a-8def-4901-990b-1910eb26cf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users",
+								"a609d76a-8def-4901-990b-1910eb26cf0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-shop-user-with-role",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shop_user\":1,\n    \"user_role\":\"MERCHANT\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-shop-user-role",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"user_role\":\"CASHIER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users/a609d76a-8def-4901-990b-1910eb26cf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users",
+								"a609d76a-8def-4901-990b-1910eb26cf0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft-delete-shop-user",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\":\"REMOVED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users/a609d76a-8def-4901-990b-1910eb26cf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users",
+								"a609d76a-8def-4901-990b-1910eb26cf0d"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-shop-user-role",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MDkzNjg1LCJpYXQiOjE3MDU1MDE2ODUsImp0aSI6IjdjMzA3NDQ1YTZhNDRiN2ZhOWUxYzkyNmZjNWZmMGRiIiwidXNlcl9pZCI6Mn0.Ebyp5ZxmynlTNZ4PjpQ1JgD7nvHIFlI1zOooqMz7YGM",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"shop_user\":2,\n    \"user_role\":\"CASHIER\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/globalshop.localhost:3000.com/users/a609d76a-8def-4901-990b-1910eb26cf0d",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"globalshop.localhost:3000.com",
+								"users",
+								"a609d76a-8def-4901-990b-1910eb26cf0d"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Product",
+			"item": [
+				{
+					"name": "shop-product-list",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-product-detail",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "shop-product-create",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "product 5",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "1000",
+									"type": "text"
+								},
+								{
+									"key": "selling_price",
+									"value": "1100",
+									"type": "text"
+								},
+								{
+									"key": "discount",
+									"value": "10",
+									"type": "text"
+								},
+								{
+									"key": "uploaded_images",
+									"type": "file",
+									"src": [
+										"/home/joy/Downloads/52423251.png",
+										"/home/joy/Downloads/image-1080805-BD-AI-3nun-1705229350.jpg",
+										"/home/joy/Downloads/image-1232786-BD-AI-wzqd-1705229293.jpg"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-shop-product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"new product 4\",\n    \"price\": \"1010.00\",\n    \"discount\": \"11.00\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft-delete-shop-product",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"status\": \"REMOVED\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-shop-product",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"name\":\"new product 4\",\n    \"price\": \"1010.00\",\n    \"discount\": \"11.00\",\n    \"selling_price\":\"1200\"\n\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-shop-product-images",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58/images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-shop-product-images",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "uploaded_images",
+									"type": "file",
+									"src": [
+										"/home/joy/Downloads/image-1080805-BD-AI-3nun-1705229350.jpg",
+										"/home/joy/Downloads/52423251.png"
+									]
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/b6555369-716e-4bd4-be3d-dc2894162f58/images",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"b6555369-716e-4bd4-be3d-dc2894162f58",
+								"images"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-shop-product-stock",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/f4b87663-e5dd-44d2-a4b5-9826839c920e/stocks",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"f4b87663-e5dd-44d2-a4b5-9826839c920e",
+								"stocks"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-shop-product-stock",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 180\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/f4b87663-e5dd-44d2-a4b5-9826839c920e/stocks/0cc9e09e-313e-49c4-a669-d4514e1e1491",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"f4b87663-e5dd-44d2-a4b5-9826839c920e",
+								"stocks",
+								"0cc9e09e-313e-49c4-a669-d4514e1e1491"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-shop-product-stock Copy",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/products/f4b87663-e5dd-44d2-a4b5-9826839c920e/stocks/0cc9e09e-313e-49c4-a669-d4514e1e1491",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"products",
+								"f4b87663-e5dd-44d2-a4b5-9826839c920e",
+								"stocks",
+								"0cc9e09e-313e-49c4-a669-d4514e1e1491"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Cart",
+			"item": [
+				{
+					"name": "get-customer-cart",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "add-cart-item",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n     \"quantity\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/carts/f4b87663-e5dd-44d2-a4b5-9826839c920e",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"f4b87663-e5dd-44d2-a4b5-9826839c920e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-cart-item",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n      \"product\": 14\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/carts/cartitems/e106bb93-d721-4fd8-b2a7-145efd12db44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"cartitems",
+								"e106bb93-d721-4fd8-b2a7-145efd12db44"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-cart-item",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/carts/cartitems/e106bb93-d721-4fd8-b2a7-145efd12db44",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"carts",
+								"cartitems",
+								"e106bb93-d721-4fd8-b2a7-145efd12db44"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Shipping-Address",
+			"item": [
+				{
+					"name": "get-user-shipping-address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-detail-user-shipping-address",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses/37b68265-09fd-4ff5-84c7-d21a0eac83e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses",
+								"37b68265-09fd-4ff5-84c7-d21a0eac83e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create-user-shipping-address",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"address_line_1\": \"brahmonkitta,keranigonj\",\n        \"address_line_2\": null,\n        \"city\": \"dhaka\",\n        \"state\": \"1310\",\n        \"postal_code\": \"1310\",\n        \"country\": \"Bosnia & Herzegovina\",\n        \"phone\": \"01791565504\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "patch-user-shipping-address",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"address_line_1\": \"brahmonkitta,keranigonj\",\n        \"postal_code\": \"1310\",\n        \"country\": \"BD\",\n        \"phone\": \"01791565504\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses/37b68265-09fd-4ff5-84c7-d21a0eac83e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses",
+								"37b68265-09fd-4ff5-84c7-d21a0eac83e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "soft-delete-user-shipping-address",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"status\": \"REMOVED\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses/37b68265-09fd-4ff5-84c7-d21a0eac83e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses",
+								"37b68265-09fd-4ff5-84c7-d21a0eac83e6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-user-shipping-address",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "    {\n        \"city\":\"dhaka\",\n        \"state\":\"12\",\n        \"address_line_1\": \"brahmonkitta,keranigonj\",\n        \"postal_code\": \"1310\",\n        \"country\": \"BD\",\n        \"phone\": \"01791565504\"\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/users/addresses/37b68265-09fd-4ff5-84c7-d21a0eac83e6",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"users",
+								"addresses",
+								"37b68265-09fd-4ff5-84c7-d21a0eac83e6"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Order",
+			"item": [
+				{
+					"name": "create-order-customer",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "get-shop-order",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/orders",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "update-shop-order",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MjYxNDEzLCJpYXQiOjE3MDU2Njk0MTMsImp0aSI6Ijc4OGVkMGI2ODFkNTQwN2ZhODJiMGIyZGNkNTc4Mzk2IiwidXNlcl9pZCI6NH0.PHOUOVNhoLPic9PWG2JsyIyLEv3GlCpl124HxKtBS_Y",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"order_status\":\"SHIPPED\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/orders/7ff8303e-dd4c-466f-84a6-08664a4699de",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"orders",
+								"7ff8303e-dd4c-466f-84a6-08664a4699de"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
