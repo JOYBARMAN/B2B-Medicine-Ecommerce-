@@ -723,6 +723,35 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "shop-dashboard",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ0b2tlbl90eXBlIjoiYWNjZXNzIiwiZXhwIjoxNzA4MTkzODY3LCJpYXQiOjE3MDU2MDE4NjcsImp0aSI6ImE2Zjg1M2NlNTU2ZjRiMjI4NjY4ZWEwMTMxMjUwOTJmIiwidXNlcl9pZCI6MX0.-YTpZ-S3qTYMl2r9dGhmikyZ_n-scRJTNxqZvOORAGc",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/dashboard",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8000",
+							"path": [
+								"api",
+								"v1",
+								"shops",
+								"shop1.localhost:3000.com",
+								"dashboard"
+							]
+						}
+					},
+					"response": []
 				}
 			],
 			"description": "Here is the collection of shop api"

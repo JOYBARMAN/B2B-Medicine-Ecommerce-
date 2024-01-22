@@ -17,6 +17,7 @@ urlpatterns = [
     path("api/v1/shops", include("shop.rest.urls.shop")),
     path("api/v1/shops/<str:domain>", include("shop.rest.urls.shop_user")),
     path("api/v1/merchant", include("shop.rest.urls.merchant")),
+    path("api/v1/shops/<str:domain>/dashboard", include("shop.rest.urls.dashboard")),
     # shop product url
     path("api/v1/shops/<str:domain>/products", include("product.rest.urls.product")),
     # customer cart url
