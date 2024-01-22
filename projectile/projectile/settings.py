@@ -51,6 +51,7 @@ PROJECT_APPS = [
     "cart.apps.CartConfig",
     "shipping_address.apps.ShippingAddressConfig",
     "order.apps.OrderConfig",
+    "payment.apps.PaymentConfig",
 ]
 THIRD_PARTY_APPS = [
     "rest_framework",

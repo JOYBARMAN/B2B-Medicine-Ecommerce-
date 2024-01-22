@@ -86,19 +86,3 @@ class ShopUserDetailSerializer(ShopUserBaseSerializer):
             "created_at",
             "updated_at",
         ]
-
-
-# class ShopDetailSerializer(ShopBaseSerializer):
-#     merchant = MerchantSerializer(read_only=True)
-
-#     class Meta(ShopBaseSerializer.Meta):
-#         fields = ShopBaseSerializer.Meta.fields + [
-#             "merchant",
-#             "domain",
-#             "created_at",
-#             "updated_at",
-#         ]
-#         read_only_fields = ShopBaseSerializer.Meta.read_only_fields + [
-#             "created_at",
-#             "updated_at",
-#         ]

@@ -54,17 +54,3 @@ class IsActivatedUser(IsAuthenticated):
 
         # Check if the user is activated by OTP
         return request.user.is_activated()
-
-
-class IsBusinessOwnerOrReadOnly(BasePermission):
-    """
-    Allow access only own business
-    """
-
-    def has_object_permission(self, request, view, obj):
-        # Allow access for safe methods (GET, HEAD, OPTIONS)
-        if request.method in SAFE_METHODS:
-            return True
-
-        # Deny access if the user is not the owner of the business
-        return obj.user == request.user
