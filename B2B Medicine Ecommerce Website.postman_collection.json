@@ -1741,6 +1741,15 @@
 								"type": "text"
 							}
 						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"payment\":{\"payment_type\":\"CASH_ON_DELIVERY\"},\n    \"shipping_address\":1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
 							"raw": "http://localhost:8000/api/v1/shops/shop1.localhost:3000.com/orders",
 							"protocol": "http",

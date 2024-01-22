@@ -8,13 +8,24 @@ from order.models import ShopOrder, OrderItem
 from cart.models import CartItem
 from shop.models import Shop
 from product.models import ProductStock
+from payment.models import Payment
 from common.choices import Status
 from cart.rest.serializers.cart import ProductSerializer
 from shop.rest.serializers.shop_user import UserSerializer, ShopSerializer
 from shipping_address.rest.serializers.shipping_address import ShippingAddressSerializer
 
 
+class PaymentSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Payment
+        fields = [
+            "payment_type",
+        ]
+
+
 class ShopOrderSerializer(serializers.ModelSerializer):
+    payment = PaymentSerializer()
+
     class Meta:
         model = ShopOrder
         fields = [
@@ -26,6 +37,7 @@ class ShopOrderSerializer(serializers.ModelSerializer):
             "total_items",
             "total_price",
             "shipping_address",
+            "payment",
             "status",
         ]
         read_only_fields = [
@@ -40,6 +52,7 @@ class ShopOrderSerializer(serializers.ModelSerializer):
     def create(self, validated_data):
         user = self.context.get("user")
         shop = Shop.objects.get(domain=self.context.get("domain"))
+        payment = validated_data.pop("payment")
 
         # Fetch related cart items
         cart_items = CartItem.objects.filter(
@@ -76,6 +89,13 @@ class ShopOrderSerializer(serializers.ModelSerializer):
 
             # Update totals creation of OrderItems
             shop_order.update_totals()
+
+            # Create payment
+            Payment.objects.create(
+                order=shop_order,
+                payment_type=payment["payment_type"],
+                total_payable=shop_order.total_price,
+            )
 
         serialized_instance = self.__class__(shop_order, context=self.context).data
         return serialized_instance
